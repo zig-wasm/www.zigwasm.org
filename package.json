@@ -1,0 +1,12 @@
+{
+  "name": "zigwasm.org",
+  "source": "./index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build ./index.html ./404.html ./og_image.png --no-source-maps"
+  },
+  "devDependencies": {
+    "parcel": "^2.14.4",
+    "svgo": "^3.3.2"
+  }
+}

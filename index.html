@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Zig and WebAssembly</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Building high-performance WebAssembly tools for the Zig ecosystem">
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zig and WebAssembly" />
+  <meta name="twitter:description" content="High-performance WASM tooling for Zig" />
+  <meta name="twitter:image" content="https://zigwasm.org/og_image.png" />
+  <meta name="twitter:site" content="@crappy_systems" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zigwasm.org/" />
+  <meta property="og:title" content="Zig and WebAssembly" />
+  <meta property="og:description" content="High-performance WASM tooling for Zig" />
+  <meta property="og:image" content="https://zigwasm.org/og_image.png" />
+  <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" sizes="256x256">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+
+<body>
+  <div class="content-wrapper">
+    <div class="header">
+      <div class="logo"><span style="background-color: #facd17;">Zig</span> and <span
+          style="background-color: #d4cbfc;">WebAssembly</span></div>
+      <div class="header-row">
+        <a href="https://github.com/zig-wasm" class="see-more">
+          <div class="user-level">
+            <img class="github-logo" src="./static/img/github_icon.svg" alt="Github icon">
+            Source
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="text-placeholder">
+      <div class="running-text-bg">
+        <div class="marquee">
+          <ul class="marquee__content">
+            <li>
+              (module (func $f (param i32) (result i32) local.get i32.const i32.add local.set local.tee drop loop block
+              br_if return nop unreachable end))
+            </li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>
+              (module (func $f (param i32) (result i32) local.get i32.const i32.add local.set local.tee drop loop block
+              br_if return nop unreachable end))
+            </li>
+          </ul>
+        </div>
+        <div class="marquee">
+          <ul class="marquee__content">
+            <li>
+              (module (func $g (param f32) (result f32) f32.const f32.add f32.sub f32.mul f32.div f32.neg f32.abs
+              f32.sqrt f32.ceil f32.floor f32.trunc f32.nearest))
+            </li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>
+              (module (func $g (param f32) (result f32) f32.const f32.add f32.sub f32.mul f32.div f32.neg f32.abs
+              f32.sqrt f32.ceil f32.floor f32.trunc f32.nearest))
+            </li>
+          </ul>
+        </div>
+        <div class="marquee">
+          <ul class="marquee__content">
+            <li>
+              (module (memory (export "mem") 1 2 data (i32.const 0) "WASM" table (export "t") 2 funcref elem (table 0)
+              (i32.const 0) func))
+            </li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>
+              (module (memory (export "mem") 1 2 data (i32.const 0) "WASM" table (export "t") 2 funcref elem (table 0)
+              (i32.const 0) func))
+            </li>
+          </ul>
+        </div>
+        <div class="marquee">
+          <ul class="marquee__content">
+            <li>
+              (module (global $g (mut i32) (i32.const 42) global.get global.set memory.grow memory.size ref.null
+              ref.func call call_indirect select))
+            </li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>
+              (module (global $g (mut i32) (i32.const 42) global.get global.set memory.grow memory.size ref.null
+              ref.func call call_indirect select))
+            </li>
+          </ul>
+        </div>
+        <div class="marquee">
+          <ul class="marquee__content">
+            <li>
+              (module (func $i (param i32) (result i32) i32.eq i32.ne i32.lt_s i32.lt_u i32.gt_s i32.gt_u i32.le_s
+              i32.le_u i32.ge_s i32.ge_u memory.fill memory.copy ref.is_null br))
+            </li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>
+              (module (func $i (param i32) (result i32) i32.eq i32.ne i32.lt_s i32.lt_u i32.gt_s i32.gt_u i32.le_s
+              i32.le_u i32.ge_s i32.ge_u memory.fill memory.copy ref.is_null br))
+            </li>
+          </ul>
+        </div>
+        <div class="marquee">
+          <ul class="marquee__content">
+            <li>
+              (module (func $h (param i64) (result i64) i64.const i64.add i64.sub i64.mul i64.div_s i64.div_u i64.rem_s
+              i64.rem_u i64.and i64.or i64.xor i64.shl i64.shr_s i64.shr_u))
+            </li>
+          </ul>
+
+          <ul aria-hidden="true" class="marquee__content">
+            <li>
+              (module (func $h (param i64) (result i64) i64.const i64.add i64.sub i64.mul i64.div_s i64.div_u i64.rem_s
+              i64.rem_u i64.and i64.or i64.xor i64.shl i64.shr_s i64.shr_u))
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="text-main">
+        <div class="text-main-box">
+          <p>A community-driven initiative focused on building and supporting WASM packages and tools for the Zig
+            programming language</p>
+          <p>We believe that Zig's focus on simplicity, performance, and control makes it an excellent language for
+            targeting WebAssembly</p>
+        </div>
+        <div class="text-main-box">
+        </div>
+      </div>
+    </div>
+
+    <div class="slider-section intentions-section">
+      <div class="section-header">
+        <p>Packages</p>
+        <a href="https://github.com/zig-wasm" class="see-more">See more ›</a>
+      </div>
+      <div class="slider-container">
+        <a href="https://github.com/zig-wasm/wasmer-zig-api" class="block-link">
+          <div id="portuguese" class="slider-item">
+            <div class="slider-item-title">wasmer-zig-api</div>
+            <div class="slider-item-body">Zig bindings for the Wasmer WebAssembly runtime</div>
+          </div>
+        </a>
+        <a href="https://github.com/chung-leong/zigar" class="block-link">
+          <div id="biology" class="slider-item">
+            <div class="slider-item-title">zigar</div>
+            <div class="slider-item-body">This is a toolkit for running Zig code in a JavaScript environment</div>
+          </div>
+        </a>
+        <a href="https://github.com/scottredig/zig-javascript-bridge" class="block-link">
+          <div id="rocket-science" class="slider-item">
+            <div class="slider-item-title">zig-javascript-bridge</div>
+            <div class="slider-item-body">This library creates bindings for accessing Javascript from within a WASM
+              runtime</div>
+          </div>
+        </a>
+        <a href="https://github.com/Afirium/zima-blue" class="block-link">
+          <div id="japanese" class="slider-item">
+            <div class="slider-item-title">zima-blue</div>
+            <div class="slider-item-body">A high-performance bridge library for Zig-to-JavaScript interoperability</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="section-header">
+      <p>Showcase</p>
+    </div>
+
+    <div class="content-box">
+      <a href="./soon.html" class="doom-demo see-more-container">
+        <div>
+          <div>
+            <p>
+              Can
+            </p>
+            <img src="./static/img/doom_logo.svg" class="showcase-doom-logo" alt="DOOM Logo">
+            <p>
+              rip and tear through HTML divs?
+            </p>
+          </div>
+
+          <p>
+            Render DOOM by dynamically updating thousands of individual HTML div elements per frame, where DOM
+            manipulation is handled by Zig.
+          </p>
+        </div>
+      </a>
+
+      <a href="./soon.html" class="zigc-demo see-more-container">
+        <div>
+          <div>
+            <p>
+              What if the
+            </p>
+            <img src="./static/img/zig_logo.svg" class="showcase-zigc-logo" alt="Zig Logo">
+            <p>
+              compiler ran in your browser?
+            </p>
+          </div>
+          <p>
+            This project compiles the Zig compiler and std library to WASM, allowing interactive Zig compilation within
+            the browser.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <div class="content-box" style="padding-top: 1.5rem;">
+      <a href="./soon.html" class="redis-demo see-more-container">
+        <div>
+          <p>
+            Is it possible to run
+            <img src="./static/img/redis_icon.svg" class="showcase-redis-logo" alt="Redis Logo">
+            in the browser?
+          </p>
+          <p>
+            We compiled the first version of Redis to WASM, demonstrating that even stateful applications can run
+            entirely in your browser.
+          </p>
+        </div>
+      </a>
+
+      <a href="https://github.com/zig-wasm/.github/issues/new" class="join-demo see-more-container">
+        <div>
+          <p>
+            Come and join us, we need you!
+          </p>
+          <p>
+            Click on this element to open a GitHub Issue in our repository with your proposal for a new project,
+            package, or demo.
+          </p>
+        </div>
+      </a>
+    </div>
+
+    <!-- <div class="slider-section">
+      <div class="section-header">
+        <p>Posts</p>
+        <a href="#" class="see-more">See more ›</a>
+      </div>
+      <div class="slider-container">
+        <div class="posts-item" style="background-color: #e8f5e9;">
+          <div>DOM manipulation in WASM</div>
+          <div class="posts-item-date">2024/04/01 by Andrey R.</div>
+        </div>
+        <div class="posts-item" style="background-color: #e3f2fd;">
+          <div>Getting started with Zig and WASM</div>
+          <div class="posts-item-date">2024/04/01 by Andrey R.</div>
+        </div>
+        <div class="posts-item" style="background-color: #fce4ec;">
+          <div>"Buildtime" pattern for JS generation</div>
+          <div class="posts-item-date">2024/04/01 by Andrey R.</div>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="footer">
+      <!-- <div>2025 ○ powered by Zig, WASM and Bun.js</div> -->
+      <div>2025 ❀ powered by Zig, WASM and Bun.js</div>
+    </div>
+  </div>
+</body>
+
+</html>
