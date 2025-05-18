@@ -3,7 +3,7 @@
   "source": "./index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build ./index.html ./404.html ./og_image.png --no-source-maps"
+    "build": "parcel build ./index.html ./404.html ./favicon.png ./og_image.png --no-source-maps"
   },
   "devDependencies": {
     "parcel": "^2.14.4",
