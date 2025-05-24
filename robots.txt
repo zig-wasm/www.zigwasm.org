@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /404.html
+Disallow: /soon.html
+
+Sitemap: https://zigwasm.org/sitemap.xml
+Host: zigwasm.org
