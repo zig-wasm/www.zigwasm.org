@@ -6,10 +6,10 @@
     "build": "parcel build ./index.html ./404.html ./favicon.png ./og_image.png ./robots.txt ./sitemap.xml --no-source-maps"
   },
   "devDependencies": {
-    "@parcel/packager-xml": "^2.15.1",
-    "@parcel/transformer-raw": "^2.15.1",
-    "@parcel/transformer-xml": "^2.15.1",
-    "parcel": "^2.15.1",
+    "@parcel/packager-xml": "2.15.1",
+    "@parcel/transformer-raw": "2.15.1",
+    "@parcel/transformer-xml": "2.15.1",
+    "parcel": "2.15.1",
     "svgo": "^3.3.2"
   }
 }
